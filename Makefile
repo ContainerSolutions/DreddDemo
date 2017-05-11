@@ -1,4 +1,4 @@
-.PHONY: ui stopui edit stopedit
+.PHONY: ui stopui edit stopedit runmock stopmock
 
 builddredd: 
 	@docker build -t dreddtest -f dredd/DockerDredd .

@@ -22,7 +22,7 @@ paths:
       produces:
         - application/json
       responses:
-        '200':
+        200:
           description: ''
           schema:
             $ref: '#/definitions/getItemsResponse'
@@ -41,15 +41,19 @@ paths:
       produces:
         - application/json
       responses:
-        '200':
+        200:
           description: ''
           schema:
             $ref: '#/definitions/successResponse'
-        '500':
+        500:
           description: Error
           schema:
             $ref: '#/definitions/errorResponse'
-  '/items/{name}':
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errorResponse'
+  /items/{name}:
     get:
       description: Returns items
       operationId: Get Item
@@ -64,7 +68,7 @@ paths:
           type: string
           default: cat
       responses:
-        '200':
+        200:
           description: ''
           schema:
             $ref: '#/definitions/item'
@@ -75,11 +79,11 @@ paths:
       produces:
         - application/json
       responses:
-        '200':
+        200:
           description: ''
           schema:
             $ref: '#/definitions/successResponse'
-        '500':
+        500:
           description: Error
           schema:
             $ref: '#/definitions/errorResponse'
