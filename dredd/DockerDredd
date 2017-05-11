@@ -12,7 +12,6 @@ ENV GOPATH /go
 ENV PATH $PATH:$GOPATH/bin
 
 RUN go get github.com/Masterminds/glide
-RUN go install github.com/Masterminds/glide
 
 ENV NODE_PATH /usr/lib/node_modules
 RUN npm install -g sha1

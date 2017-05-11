@@ -3,7 +3,7 @@ hookfiles: dredd/hooks.js
 language: nodejs
 sandbox: false
 server: ./main
-server-wait: 3
+server-wait: 2
 init: false
 custom: {}
 names: false
