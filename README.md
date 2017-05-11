@@ -15,10 +15,7 @@ make dreddtest
 Requires
 - Docker
 
-Travis CI [![Build Status](https://travis-ci.org/jasonrichardsmith/DreddDockerDemo.svg?branch=master)](https://travis-ci.org/jasonrichardsmith/DreddDockerDemo)
-
+Travis CI [![Build Status](https://travis-ci.org/ContainerSolutions/DreddDemo.svg?branch=master)](https://travis-ci.org/ContainerSolutions/DreddDemo)
 Circle CI [![CircleCI](https://circleci.com/gh/jasonrichardsmith/DreddDockerDemo.svg?style=svg)](https://circleci.com/gh/jasonrichardsmith/DreddDockerDemo)
 
-Snap CI [![Build Status](https://snap-ci.com/jasonrichardsmith/DreddDockerDemo/branch/master/build_image)](https://snap-ci.com/jasonrichardsmith/DreddDockerDemo/branch/master)
 
-View Presentation Slides [here](http://go-talks.appspot.com/github.com/jasonrichardsmith/DreddDockerDemo/slides/present.slide#1).
