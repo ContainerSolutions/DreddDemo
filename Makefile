@@ -3,5 +3,5 @@ builddredd:
 
 dreddtest: builddredd
 	@docker run\
-		-e "DEMOSHASALT=$(DEMOSHASALT)"\
+		-e "DEMOSHASALT=test_salt"\
 		dreddtest
