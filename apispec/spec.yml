@@ -9,6 +9,11 @@ consumes:
   - application/json
 produces:
   - application/json
+securityDefinitions:
+  key:
+    type: apiKey
+    in: header
+    name: Auth
 paths:
   /items:
     get:
@@ -31,6 +36,8 @@ paths:
           required: true
           schema:
             $ref: '#/definitions/item'
+      security:
+        - key: []
       produces:
         - application/json
       responses:

@@ -11,14 +11,14 @@ RUN cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup &&\
 	mkdir /go &&\
 	go get github.com/Masterminds/glide &&\
 	npm install -g sha1 &&\
-	mkdir -p $GOPATH/src/github.com/jasonrichardsmith/DreddDockerDemo
+	mkdir -p $GOPATH/src/github.com/ContainerSolutions/DreddDockerDemo
 
-COPY . $GOPATH/src/github.com/jasonrichardsmith/DreddDockerDemo
+COPY . $GOPATH/src/github.com/ContainerSolutions/DreddDemo
 
-RUN cd $GOPATH/src/github.com/jasonrichardsmith/DreddDockerDemo;\
+RUN cd $GOPATH/src/github.com/ContainerSolutions/DreddDemo;\
 	glide install;\
 	go build main.go
 
-WORKDIR $GOPATH/src/github.com/jasonrichardsmith/DreddDockerDemo
+WORKDIR $GOPATH/src/github.com/ContainerSolutions/DreddDemo
 
 ENTRYPOINT dredd/rundredd.sh
