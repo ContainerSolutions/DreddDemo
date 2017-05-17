@@ -12,7 +12,9 @@ buildpokemock:
 	@docker build -t pokemock -f pokemock/DockerPokemock .
 
 pushpokemock: buildpokemock
+	@docker login -u="$(DOCKER_USERNAME)" -p="$(DOCKER_PASSWORD)"
 	@docker tag pokemock containersol/dredd-demo-mock:$(TAG)
+	@docker push containersol/dredd-demo-mock:$(TAG)
 
 runmock: buildpokemock
 	@docker run -d --name=pokemock -p 8000:8000 pokemock
