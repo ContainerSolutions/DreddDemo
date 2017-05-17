@@ -19,3 +19,5 @@ Travis CI [![Build Status](https://travis-ci.org/ContainerSolutions/DreddDemo.sv
 Circle CI [![CircleCI](https://circleci.com/gh/ContainerSolutions/DreddDemo.svg?style=svg)](https://circleci.com/gh/ContainerSolutions/DreddDemo)
 
 Semaphore [![Build Status](https://semaphoreci.com/api/v1/jasonrichardsmith/dredddemo/branches/master/badge.svg)](https://semaphoreci.com/jasonrichardsmith/dredddemo)
+
+Jenkins [![Build Status](http://54.72.105.103:8080/buildStatus/icon?job=DreddDemo)](http://54.72.105.103:8080/job/DreddDemo)
