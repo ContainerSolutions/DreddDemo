@@ -1,0 +1,8 @@
+FROM ubuntu:17.10
+
+RUN apt-get update &&\
+	apt-get --assume-yes install curl &&\
+	curl -k -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy &&\
+	chmod +x sloppy
+COPY sloppy.json .
+ENTRYPOINT ./sloppy change -v docker_image:"containersol/dredd-demo-mock:$TAG" -v domain:"dredddemomock.sloppy.zone" /sloppy.json

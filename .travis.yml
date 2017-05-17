@@ -8,6 +8,4 @@ script:
 after_success:
   - export TAG=$TRAVIS_COMMIT
   - make pushpokemock
-  - curl -k -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy
-  - chmod +x sloppy
-  - ./sloppy change -v docker_image:"containersol/dredd-demo-mock:$TAG" -v domain:"dredddemomock.sloppy.zone" sloppy.json
+  - make runsloppy

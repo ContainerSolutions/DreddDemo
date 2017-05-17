@@ -7,10 +7,10 @@
                 {
                     "id": "mock",
                     "domain": {
-                        "uri": "dredddemomock.sloppy.zone"
+                        "uri": "$domain"
                     },
+		    "image": "$docker_image",
                     "mem": 128,
-                    "image": "containersol/dredd-demo-mock",
                     "instances": 1,
                     "port_mappings": [
                         {

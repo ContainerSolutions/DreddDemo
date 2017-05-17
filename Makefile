@@ -16,6 +16,13 @@ pushpokemock: buildpokemock
 	@docker tag pokemock containersol/dredd-demo-mock:$(TAG)
 	@docker push containersol/dredd-demo-mock:$(TAG)
 
+runsloppy:
+	@docker build -t sloppy -f sloppy/DockerSloppy .
+	@docker run\
+		-e "TAG=$(TAG)"\
+		-e "SLOPPY_APITOKEN=$(SLOPPY_APITOKEN)"\
+		sloppy .
+
 runmock: buildpokemock
 	@docker run -d --name=pokemock -p 8000:8000 pokemock
 	@echo "visit http://localhost:8000"
