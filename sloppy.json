@@ -1,0 +1,24 @@
+{    
+  "project": "dredd-demo",
+    "services": [
+        {
+            "id": "dredd-demo",
+            "apps": [
+                {
+                    "id": "mock",
+                    "domain": {
+                        "uri": "dredddemomock.sloppy.zone"
+                    },
+                    "mem": 128,
+                    "image": "containersol/dredd-demo-mock",
+                    "instances": 1,
+                    "port_mappings": [
+                        {
+                            "container_port": 8000
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
