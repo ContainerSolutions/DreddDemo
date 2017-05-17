@@ -11,6 +11,7 @@ To run test
 make dreddtest
 ```
 
+
 Requires
 - Docker
 
@@ -22,4 +23,8 @@ Semaphore [![Build Status](https://semaphoreci.com/api/v1/jasonrichardsmith/dred
 
 Jenkins [![Build Status](http://54.72.105.103:8080/buildStatus/icon?job=DreddDemo)](http://54.72.105.103:8080/job/DreddDemo)
 
+
+[Swagger UI](https://ui-dredddemomock.sloppy.zone/)
+
+[Mock Server](https://dredddemomock.sloppy.zone/)
 
