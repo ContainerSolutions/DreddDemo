@@ -5,4 +5,4 @@ RUN apt-get update &&\
 	curl -k -L https://files.sloppy.io/sloppy-`uname -s`-`uname -m` > sloppy &&\
 	chmod +x sloppy
 COPY sloppy.json .
-ENTRYPOINT ./sloppy change -v docker_image:"containersol/dredd-demo-mock:$TAG" -v domain:"dredddemomock.sloppy.zone" /sloppy.json
+ENTRYPOINT ./sloppy change -v docker_image:"containersol/dredd-demo-mock:$TAG" -v domain:"dredddemomock.sloppy.zone" -v ui_domain:"ui-dredddemomock.sloppy.zone" /sloppy.json

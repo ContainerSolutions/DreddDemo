@@ -17,6 +17,23 @@
                             "container_port": 8000
                         }
                     ]
+                },
+                {
+                    "id": "api-ui",
+                    "domain": {
+                        "uri": "$ui_domain"
+                    },
+		    "image": "swaggerapi/swagger-ui",
+                    "mem": 128,
+                    "instances": 1,
+                    "port_mappings": [
+                        {
+                            "container_port": 8080
+                        }
+                    ],
+		    "env": {
+			"API_URL": "https://raw.githubusercontent.com/ContainerSolutions/DreddDemo/master/apispec/spec.yml"
+		    }
                 }
             ]
         }
