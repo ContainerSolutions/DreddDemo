@@ -16,13 +16,6 @@ pushpokemock: buildpokemock
 	@docker tag pokemock containersol/dredd-demo-mock:$(TAG)
 	@docker push containersol/dredd-demo-mock:$(TAG)
 
-runsloppy:
-	@docker build -t sloppy -f sloppy/DockerSloppy .
-	@docker run\
-		-e "TAG=$(TAG)"\
-		-e "SLOPPY_APITOKEN=$(SLOPPY_APITOKEN)"\
-		sloppy .
-
 runmock: buildpokemock
 	@docker run -d --name=pokemock -p 8000:8000 pokemock
 	@echo "visit http://localhost:8000"
@@ -30,9 +23,16 @@ runmock: buildpokemock
 stopmock:
 	@docker rm -f pokemock
 
+runsloppy:
+	@docker build -t sloppy -f sloppy/DockerSloppy .
+	@docker run\
+		-e "TAG=$(TAG)"\
+		-e "SLOPPY_APITOKEN=$(SLOPPY_APITOKEN)"\
+		sloppy .
+
 ui:
 	@docker run -d --name swaggerui -p 8080:8080\
-		-e API_URL=https://raw.githubusercontent.com/ContainerSolutions/DreddDemo/master/apispec/spec.yml\
+		-e "API_URL=https://raw.githubusercontent.com/ContainerSolutions/DreddDemo/master/apispec/spec.yml"\
 		swaggerapi/swagger-ui
 	@echo "visit http://localhost:8080"
 stopui:
