@@ -6,12 +6,12 @@ ENV NODE_PATH /usr/lib/node_modules
 
 RUN cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup &&\
 	rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist &&\
+	pacman -Sy &&\
 	pacman -S --noconfirm go nodejs npm git &&\
 	npm install -g dredd@stable &&\
 	mkdir /go &&\
 	go get github.com/Masterminds/glide &&\
-	npm install -g sha1 &&\
-	mkdir -p $GOPATH/src/github.com/ContainerSolutions/DreddDockerDemo
+	npm install -g sha1
 
 COPY . $GOPATH/src/github.com/ContainerSolutions/DreddDemo
 
