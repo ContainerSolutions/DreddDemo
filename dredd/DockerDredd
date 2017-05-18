@@ -15,8 +15,8 @@ RUN cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup &&\
 
 COPY . $GOPATH/src/github.com/ContainerSolutions/DreddDemo
 
-RUN cd $GOPATH/src/github.com/ContainerSolutions/DreddDemo;\
-	glide install;\
+RUN cd $GOPATH/src/github.com/ContainerSolutions/DreddDemo &&\
+	glide install &&\
 	go build main.go
 
 WORKDIR $GOPATH/src/github.com/ContainerSolutions/DreddDemo
